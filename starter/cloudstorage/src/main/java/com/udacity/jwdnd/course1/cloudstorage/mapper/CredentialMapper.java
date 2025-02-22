@@ -14,7 +14,7 @@ public interface CredentialMapper {
     @Select("SELECT * FROM CREDENTIALS WHERE credentialId = #{credentialId}")
     Credential getCredentialById(Integer credentialId);
 
-    @Select("SELECT * FROM CREDENTIALS WHERE userId = #{userId} AND url = #{url} AND url = #{url}")
+    @Select("SELECT * FROM CREDENTIALS WHERE userId = #{userId} AND username = #{username} AND url = #{url}")
     Credential getCredentialByUsernameAndUrl(String username, String url, Integer userId);
 
     @Insert("INSERT INTO CREDENTIALS (url, username, password, userId) VALUES (#{url}, #{username}, #{password}, #{userId})")

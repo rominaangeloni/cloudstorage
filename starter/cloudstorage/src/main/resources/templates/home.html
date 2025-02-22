@@ -25,10 +25,10 @@
     </script>
 
     <body class="p-3 mb-2 bg-light text-black">
-    <div th:if="${successMessage}" class="alert alert-success">
+    <div th:if="${successMessage}" id="success-msg" class="alert alert-success">
         <p th:text="${successMessage}"></p>
     </div>
-    <div th:if="${errorMessage}" class="alert alert-danger">
+    <div th:if="${errorMessage}" id="error-msg" class="alert alert-danger">
         <p th:text="${errorMessage}"></p>
     </div>
         <div class="container">
@@ -254,6 +254,24 @@
                 $('#credentialModal').modal('show');
             }
 
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.addEventListener('click', function() {
+                    const successMsg = document.getElementById('success-msg');
+                    const errorMsg = document.getElementById('error-msg');
+
+                    if (successMsg) {
+                        successMsg.classList.add('fade');
+                        setTimeout(() => successMsg.remove(), 500);
+                    }
+
+                    if (errorMsg) {
+                        errorMsg.classList.add('fade');
+                        setTimeout(() => errorMsg.remove(), 500);
+                    }
+                });
+            });
         </script>
     </body>
 </html>

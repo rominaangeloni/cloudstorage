@@ -36,5 +36,29 @@
                 <label><a id="signup-link" th:href="@{/signup}">Click here to sign up</a></label>
             </div>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.addEventListener('click', function() {
+                    const successMsg = document.getElementById('success-msg');
+                    const errorMsg = document.getElementById('error-msg');
+                    const logoutMsg = document.getElementById('logout-msg');
+
+                    if (successMsg) {
+                        successMsg.classList.add('fade');
+                        setTimeout(() => successMsg.remove(), 500);
+                    }
+
+                    if (errorMsg) {
+                        errorMsg.classList.add('fade');
+                        setTimeout(() => errorMsg.remove(), 500);
+                    }
+
+                    if (logoutMsg) {
+                        logoutMsg.classList.add('fade');
+                        setTimeout(() => logoutMsg.remove(), 500);
+                    }
+                });
+            });
+        </script>
     </body>
 </html>

@@ -7,7 +7,7 @@ public class CredentialsTests extends BaseTest {
 
     @Test
     public void testAddACredential() {
-        //doMockSignUp("Romi","Test","romiAddCredential","12345");
+        doMockSignUp("Romi","Test","romiAddCredential","12345");
         doLogIn("romiAddCredential", "12345");
 
         Assertions.assertEquals("http://localhost:" + this.port + "/home", driver.getCurrentUrl());
@@ -30,7 +30,7 @@ public class CredentialsTests extends BaseTest {
 
     @Test
     public void testEditACredential() {
-        //doMockSignUp("Romi","Test","romiEditCredential","12345");
+        doMockSignUp("Romi","Test","romiEditCredential","12345");
         doLogIn("romiEditCredential", "12345");
         Assertions.assertEquals("http://localhost:" + this.port + "/home", driver.getCurrentUrl());
         clickOnCredentialsTab();
@@ -58,7 +58,7 @@ public class CredentialsTests extends BaseTest {
 
     @Test
     public void testDeleteACredential() {
-       // doMockSignUp("Romi","Test","romiDeleteCredential","12345");
+       doMockSignUp("Romi","Test","romiDeleteCredential","12345");
         doLogIn("romiDeleteCredential", "12345");
         Assertions.assertEquals("http://localhost:" + this.port + "/home", driver.getCurrentUrl());
         clickOnCredentialsTab();
