@@ -112,7 +112,7 @@ public class BaseTest {
     }
 
     public void findDeleteInTable(String value, String tableName, String fieldName, String buttonName) {
-        List<WebElement> rows = driver.findElements(By.cssSelector(tableName +" tbody tr"));//WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        List<WebElement> rows = driver.findElements(By.cssSelector(tableName +" tbody tr"));
 
 
         for (WebElement row : rows) {
@@ -126,7 +126,7 @@ public class BaseTest {
     }
 
     public void clickEditButtonInTable(String value, String tableName, String fieldName, String buttonName) {
-        List<WebElement> rows = driver.findElements(By.cssSelector(tableName + " tbody tr"));//WebDriverWait webDriverWait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        List<WebElement> rows = driver.findElements(By.cssSelector(tableName + " tbody tr"));
 
         for (WebElement row : rows) {
             WebElement titleElement = webDriverWait.until(ExpectedConditions.visibilityOf(row.findElement(By.cssSelector(fieldName))));
