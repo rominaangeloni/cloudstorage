@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -29,7 +28,6 @@ public class FileController {
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("fileUpload") MultipartFile file, Principal principal, RedirectAttributes redirectAttributes) {
-       final long MAX_FILE_SIZE = 5 * 1024 * 1024;
 
         if (file.isEmpty()) {
             redirectAttributes.addFlashAttribute("errorMessage", "Please select a file to upload.");

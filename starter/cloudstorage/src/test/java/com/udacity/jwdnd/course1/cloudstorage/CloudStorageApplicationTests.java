@@ -102,5 +102,7 @@ class CloudStorageApplicationTests extends BaseTest {
 			System.out.println("Large File upload failed");
 		}
 		Assertions.assertFalse(isTextPresent("HTTP Status 403 – Forbidden"));
+		Assertions.assertTrue(isTextPresent("File size exceeds the 5MB limit."));
+
 	}
 }
